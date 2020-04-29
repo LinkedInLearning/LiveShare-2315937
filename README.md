@@ -1,4 +1,4 @@
-# COURSENAME
+# Remote collaboration for developers with Microsoft Live Share
 This is the repository for the LinkedIn Learning course [COURSENAME]. The full course is available from [LinkedIn Learning](LICOURSEURL).
 
 [![COURSENAME](COURSEIMAGE)](LICOURSEURL)
