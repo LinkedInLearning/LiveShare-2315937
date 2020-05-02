@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DrawLogo {
-	internal class LogoRenderer {
+namespace DrawLogo
+{
+	internal class LogoRenderer
+	{
 
 		private const int PADDING = 2;
 		private string _paddedSpaces;
-		private int _sideMargin;
+		private int _numCharsInSideMargin;
 		private const int LINE_HEIGHT = 4;
 		private Random _ran = new Random();
 
-		internal void DrawHeader(string titleText, int sideMargin = 4) {
-			_paddedSpaces = new string(' ', sideMargin);
-			_sideMargin = sideMargin;
+		internal void DrawHeader(string titleText, double sideMarginPercent = .10)
+		{
+			if (sideMarginPercent > .40)
+			{
+				sideMarginPercent = .40;
+			}
+			_numCharsInSideMargin = (int)(Console.WindowWidth * sideMarginPercent);
+			_paddedSpaces = new string(' ', _numCharsInSideMargin);
+
 			Console.Write(CreateTopLine());
 			for (int counter = 0; counter < LINE_HEIGHT; counter++)
 			{
@@ -28,51 +36,50 @@ namespace DrawLogo {
 			Console.Write(CreateBottomLine());
 		}
 
-		private void DrawTitle(string titleText) {
-			var dottedString = GetDottedString(_sideMargin);
+		private void DrawTitle(string titleText)
+		{
+			var dottedString = GetDottedString(_numCharsInSideMargin);
+			var remainingSpace = Console.WindowWidth - (_numCharsInSideMargin * 2 + 2);
+			var titlePad = (remainingSpace - (titleText.Length)) / 2;
 
 			Console.Write(dottedString + "║");
 			Console.ForegroundColor = ConsoleColor.Yellow;
 
-			//center the title line
-			//var halfWidth = (Console.WindowWidth) / 2;
-			//var offset = halfWidth + (_sideMargin - titleText.Length) / 2;
 
-			var remainingSpace = Console.WindowWidth - (_sideMargin * 2 + 2);
-			var titlePad = (remainingSpace - (titleText.Length) )/2;
+
+
 			string titlePadSpaces = new string(' ', titlePad);
-			//var title = String.Format("{0," + offset + "}", titleText);
-			//var formattedTitle = String.Format("{0," + titlePad + "}", titleText);
-
 
 			Console.Write($"{titlePadSpaces}{titleText}{titlePadSpaces}");
 
 			Console.ResetColor();
 
-			//	var titleEnd = String.Format("{0," + (((Console.WindowWidth) / 2) - 5) + "}", "║" );
 			var titleEnd = String.Format("{0," + ((titlePad + 5)) + "}", "║");
-			Console.WriteLine(" ║" +  dottedString);
+			Console.WriteLine(" ║" + dottedString);
 		}
 
-		private string CreateTopLine() {
-			var dottedString = GetDottedString(_sideMargin);
-			var barText = new String('═', Console.WindowWidth - (_sideMargin * 2) - PADDING);
+		private string CreateTopLine()
+		{
+			var dottedString = GetDottedString(_numCharsInSideMargin);
+			var barText = new String('═', Console.WindowWidth - (_numCharsInSideMargin * 2) - PADDING);
 			var topLineText = String.Format(dottedString + "╔{0}╗" + dottedString, barText);
 
 			return topLineText;
 		}
 
-		private String CreateMidLine() {
-			var spaceText = new String(' ', Console.WindowWidth - (_sideMargin * 2) - PADDING);
-			var dottedString = GetDottedString(_sideMargin);
+		private String CreateMidLine()
+		{
+			var spaceText = new String(' ', Console.WindowWidth - (_numCharsInSideMargin * 2) - PADDING);
+			var dottedString = GetDottedString(_numCharsInSideMargin);
 			var midLineText = String.Format(dottedString + "║{0}║" + dottedString, spaceText);
 			return midLineText;
 
 		}
 
-		private string CreateBottomLine() {
-			var paddingString = GetDottedString(_sideMargin);
-			var barText = new String('═', Console.WindowWidth - (_sideMargin * 2) - PADDING);
+		private string CreateBottomLine()
+		{
+			var paddingString = GetDottedString(_numCharsInSideMargin);
+			var barText = new String('═', Console.WindowWidth - (_numCharsInSideMargin * 2) - PADDING);
 
 			var bottomLineText = String.Format(paddingString + "╚{0}╝" + paddingString, barText);
 
@@ -80,7 +87,8 @@ namespace DrawLogo {
 		}
 
 		private int _switch;
-		private string GetDottedString(int stringLength) {
+		private string GetDottedString(int stringLength)
+		{
 			_switch += 1;
 			string output = string.Empty;
 			for (int i = 0; i < stringLength; i++)
