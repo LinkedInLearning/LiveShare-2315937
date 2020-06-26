@@ -1,5 +1,11 @@
-# Remote collaboration for developers with Microsoft Live Share
-This is the repository for the **LinkedIn Learning**  [Live Share](#) course. The full course is available from [LinkedIn Learning](https://linkedin.com/learning/).
+# Remote collaboration for Developers with Microsoft Live Share
+This is the repository for the **LinkedIn Learning** [Live Share](#) course. The full course is available from [LinkedIn Learning](https://www.linkedin.com/learning/remote-collaboration-for-developers-with-microsoft-live-share/).
+
+# Course Details
+
+Remote work is the new normal for many professionals. Software developers acclimating to this new world of work must grapple with the same challenges facing those in other industries. How do you best approach remote collaboration? How do you remain efficient when your living room is now your office? Cloud-based DevOps tools help remote developers manage their source code and build pipelines, and virtual communication tools help them keep in touch with their coworkers. Developers also need tooling to write, review, and pair with other developers in their IDEs and code editors. 
+
+In this course, staff instructors Walt Ritscher and Ray Villalobos dive into one such tool: Microsoft Visual Studio Live Share. This tool—which is integrated in the Visual Studio IDE and Visual Studio Code editor—makes it easy to share, edit, and debug your code without requiring collaborators to install SDKs or clone any repos. Discover how to start a Live Share session, co-debug a project, and more.
 
 
 # Branches
@@ -13,6 +19,7 @@ For this course the instructor uses Visual Studio 2019, any edition is sufficien
 When you are ready to [learn more about .NET](https://www.linkedin.com/learning/search?entityType=COURSE&keywords=.net) or [Visual Studio](https://www.linkedin.com/learning/search?entityType=COURSE&keywords=visual%20studio), **LinkedIn Learning** has what you need. 
 
 ## About the Instructor - Walt Ritscher
-Check out my [other courses](https://www.linkedin.com/learning/instructors/walt-ritscher) on LinkedIn Learning.  Follow me on [LinkedIn](https://www.linkedin.com/in/waltritscher/?trk=lil_course) and [Twitter](https://twitter.com/waltritscher). 
+Check out Walt's [other courses](https://www.linkedin.com/learning/instructors/walt-ritscher) on LinkedIn Learning.  Follow Walt on [LinkedIn](https://www.linkedin.com/in/waltritscher/?trk=lil_course) and [Twitter](https://twitter.com/waltritscher). 
 
-![Walt Ritscher Headshot](https://38ydkq.dm.files.1drv.com/y4moADNYVNnmGDQCVwkufdGJmbpNZ-ym19j09TtRSOJpMSRFbMVFrRsM7DNZ5DRAY6tb1zsk_Df8ESybhbWypqCa8DXTuGbo4oAYE36t27l2LRgiGL42VVKEksULNm076nZQRfaL_Ew2cDw0V8IwcoztB46_RSn6biJd33elOHTDlDC6jy5kdTc7P8HW_F6TdSb?width=461&height=461&cropmode=none)
+## About the Instructor - Ray Villalobos
+Check out Rays's [other courses](https://www.linkedin.com/learning/instructors//ray-villalobos) on LinkedIn Learning.  Follow Ray on [LinkedIn](https://www.linkedin.com/in/planetoftheweb/?trk=lil_course) and [Twitter](https://twitter.com/planetoftheweb).
